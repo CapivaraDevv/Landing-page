@@ -1,0 +1,9 @@
+.fade-feedback {
+    transition: opacity 0.3s;
+}
+.fade-in {
+    opacity: 1;
+}
+.fade-out {
+    opacity: 0;
+}
