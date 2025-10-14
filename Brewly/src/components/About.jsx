@@ -1,16 +1,18 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import '../styles/About.css'
 
 const feedback = [
     {
         id: 1,
         cliente: "Pedro",
-        texto: "Nota 10 como sempre, graças a Brewly minhas manhãs são mais felizes."
+        texto: "Nota 10 como sempre, graças a Brewly minhas manhãs são mais felizes.",
+        estrelas: 5
     },
     {
         id: 2,
         cliente: "Gabriel",
-        texto: "Uma loja espetacular, sempre com os melhores produtos."
+        texto: "Uma loja espetacular, sempre com os melhores produtos.",
+        estrelas: 4
     }
 ];
 
@@ -34,6 +36,12 @@ function About() {
         changeFeedback(index === feedback.length - 1 ? 0 : index + 1);
     };
 
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            nextFeedback();
+        }, 4000);
+        return () => clearTimeout(timer);
+    }, [index]);
 
     return (
         <>
@@ -48,8 +56,13 @@ function About() {
                 </div>
 
                 <div className="max-w-4xl mx-auto px-4 py-5 text-center flex-col items-center justify-center bg-[#ffffff] rounded-lg">
-                    <div className={`text-[#856a59] mb-4 fade-feedback ${fade ? 'fade-in' : 'fade-out'}`}>
-                        <h3 className="playfair-display-texto text-2xl mb-3">{feedback[index].cliente}</h3>
+                    <div className={`text-[#856a59] mb-4 fade-feedback feedback-card ${fade ? 'fade-in' : 'fade-out'}`}>
+                        <h3 className="playfair-display-texto text-[#4e392c] text-2xl">{feedback[index].cliente}</h3>
+                        <div className='flex justify-center mb-2'>
+                            {[...Array(5)].map((_, i) => (
+                                <span key={i} className={i < feedback[index].estrelas ? "text-yellow-400" : "text-gray-300"}>★</span>
+                            ))}
+                        </div>
                         <p className="italic t">{feedback[index].texto}</p>
                     </div>
                     <div className="flex gap-2">
