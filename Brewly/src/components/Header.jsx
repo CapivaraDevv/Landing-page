@@ -1,6 +1,12 @@
+import { useState } from "react"
 
 
-function Header() {
+function Header({ search, setSearch }) {
+    
+    const handleSubmit = (e) => {
+        e.preventDefault();
+    };
+
     return (
         <>
             <div className="fixed top-0 left-0 right-0 w-full bg-[#856a59] backdrop-blur border-b border-zinc-200 z-50">
@@ -29,6 +35,20 @@ function Header() {
                             </div>
                         </div>
                     </div>
+                    <form className="w-full max-w-lg mx-auto flex items-center bg-white rounded-full px-3 py-1" onSubmit={handleSubmit}>
+                        <label htmlFor="default-search" className="sr-only">Buscar</label>
+                        <input 
+                            type="search"
+                            id="default-search"
+                            className="w-full px-4 py-2 rounded-full outline-none text-[#5e4b3e] playfair-display-texto" 
+                            placeholder="Buscar cafés..."
+                            value={search}
+                            onChange={(e) => setSearch(e.target.value)}
+                        />
+                        <button type="submit" className="font-pacifico ml-3 text-white bg-[#5e4b3e] px-3 py-1 rounded-full hover:bg-[#856a59] transition-colors">
+                            Buscar
+                        </button>
+                    </form>
                 </div>
             </div>
         </>
