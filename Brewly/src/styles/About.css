@@ -1,3 +1,10 @@
+.feedback-card {
+    min-height: 10px; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
 .fade-feedback {
     transition: opacity 0.3s;
 }
