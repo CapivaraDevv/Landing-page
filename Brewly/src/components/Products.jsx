@@ -22,7 +22,10 @@ const produtos = [
     }
 ]
 
-function Products() {
+function Products({ search }) {
+    const produtosFiltrados = produtos.filter(produto =>
+        produto.nome.toLowerCase().includes(search.toLowerCase())
+    )
     return (
         <>
             <section className="py-16 bg-amber-50 text-[#5A3E36]">
@@ -36,7 +39,7 @@ function Products() {
                         </p>
                     </div>
                     <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                        {produtos.map(produto => (
+                        {produtosFiltrados.map(produto => (
                             <div key={produto.id} className="relative bg-white border border-zinc-200 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow flex flex-col">
                                 <img src={produto.imagem} alt={produto.nome} className="w-full h-52 object-cover hover:scale-105 hover:brightness-90" />
                                 <div className="p-4 flex flex-col flex-1">
