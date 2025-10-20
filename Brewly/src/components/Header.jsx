@@ -1,8 +1,11 @@
 import { useState } from "react"
 
 
+
+
 function Header({ search, setSearch }) {
     
+
     const handleSubmit = (e) => {
         e.preventDefault();
     };
@@ -18,7 +21,7 @@ function Header({ search, setSearch }) {
                             Produtos
                         </a>
 
-                        <div className="absolute top-full left-1/2 transform -translate-x-1/2 mt-3 w-30 bg-[#856a59] rounded-b-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+                        <div className="absolute top-full left-1/2 transform -translate-x-1/2 mt-3 w-30 bg-[#856a59] rounded-b-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 ease-in-out z-50">
                             <div className="playfair-display-texto text-white text-center py-2">
                                 <a href="#expresso" className="block px-4 py-2 text-sm  hover:bg-amber-50 hover:text-[#5A3E36] transition-colors duration-200">
                                     Expresso
@@ -45,7 +48,14 @@ function Header({ search, setSearch }) {
                             value={search}
                             onChange={(e) => setSearch(e.target.value)}
                         />
-                        <button type="submit" className="font-pacifico ml-3 text-white bg-[#5e4b3e] px-3 py-1 rounded-full hover:bg-[#856a59] transition-colors">
+                        <button
+                            type="submit"
+                            className="
+                                cursor-pointer
+                                font-pacifico text-white bg-[#856a59] px-3 py-1 rounded-full hover:bg-[#856a59]
+                                transition-all delay-150 duration-300 hover:px-5 ease-in-out 
+                            "
+                        >
                             Buscar
                         </button>
                     </form>
