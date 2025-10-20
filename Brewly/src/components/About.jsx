@@ -55,7 +55,7 @@ function About() {
                     </p>
                 </div>
 
-                <div className="max-w-4xl mx-auto px-4 py-5 text-center flex-col items-center justify-center bg-[#ffffff] rounded-lg">
+                <div className="max-w-4xl mx-auto px-4 py-5 text-center flex-col items-center justify-center bg-[#ffffff] rounded-lg transition-all hover:scale-110 ease-in-out delay-100 duration-300">
                     <div className={`text-[#856a59] mb-4 fade-feedback feedback-card ${fade ? 'fade-in' : 'fade-out'}`}>
                         <h3 className="playfair-display-texto text-[#4e392c] text-2xl">{feedback[index].cliente}</h3>
                         <div className='flex justify-center mb-2'>
@@ -66,8 +66,8 @@ function About() {
                         <p className="italic t">{feedback[index].texto}</p>
                     </div>
                     <div className="flex gap-2">
-                        <button onClick={prevFeedback} className="bg-[#856a59] text-white px-3 py-1 rounded hover:bg-[#a68a6d] transition-colors">&lt;</button>
-                        <button onClick={nextFeedback} className="bg-[#856a59] text-white px-3 py-1 rounded hover:bg-[#a68a6d] transition-colors">&gt;</button>
+                        <button onClick={prevFeedback} className="bg-[#856a59] cursor-pointer text-white px-3 py-1 rounded hover:bg-[#a68a6d] transition-colors">&lt;</button>
+                        <button onClick={nextFeedback} className="bg-[#856a59] cursor-pointer text-white px-3 py-1 rounded hover:bg-[#a68a6d] transition-colors">&gt;</button>
                     </div>
                 </div>
 
