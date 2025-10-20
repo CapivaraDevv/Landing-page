@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from "motion/react";
 import '../styles/About.css'
 
 const feedback = [
@@ -18,24 +19,16 @@ const feedback = [
 
 function About() {
     const [index, setIndex] = useState(0);
-    const [fade, setFade] = useState(true);
-
-    const changeFeedback = (newIndex) => {
-        setFade(false);
-        setTimeout(() => {
-            setIndex(newIndex);
-            setFade(true);
-        }, 300);
-    };
 
     const prevFeedback = () => {
-        changeFeedback(index === 0 ? feedback.length - 1 : index - 1);
+        setIndex(prev => (prev === 0 ? feedback.length - 1 : prev - 1));
     };
 
     const nextFeedback = () => {
-        changeFeedback(index === feedback.length - 1 ? 0 : index + 1);
+        setIndex(prev => (prev === feedback.length - 1 ? 0 : prev + 1));
     };
 
+    // Auto-advance a cada 4s
     useEffect(() => {
         const timer = setTimeout(() => {
             nextFeedback();
@@ -55,26 +48,62 @@ function About() {
                     </p>
                 </div>
 
-                <div className="max-w-4xl mx-auto px-4 py-5 text-center flex-col items-center justify-center bg-[#ffffff] rounded-lg transition-all hover:scale-110 ease-in-out delay-100 duration-300">
-                    <div className={`text-[#856a59] mb-4 fade-feedback feedback-card ${fade ? 'fade-in' : 'fade-out'}`}>
-                        <h3 className="playfair-display-texto text-[#4e392c] text-2xl">{feedback[index].cliente}</h3>
-                        <div className='flex justify-center mb-2'>
-                            {[...Array(5)].map((_, i) => (
-                                <span key={i} className={i < feedback[index].estrelas ? "text-yellow-400" : "text-gray-300"}>★</span>
-                            ))}
-                        </div>
-                        <p className="italic t">{feedback[index].texto}</p>
-                    </div>
-                    <div className="flex gap-2">
-                        <button onClick={prevFeedback} className="bg-[#856a59] cursor-pointer text-white px-3 py-1 rounded hover:bg-[#a68a6d] transition-colors">&lt;</button>
-                        <button onClick={nextFeedback} className="bg-[#856a59] cursor-pointer text-white px-3 py-1 rounded hover:bg-[#a68a6d] transition-colors">&gt;</button>
+                <div className="max-w-4xl mx-auto px-4 py-5 text-center flex flex-col items-center justify-center">
+                    <AnimatePresence mode="wait">
+                        <motion.div
+                            key={index} // faz o Motion perceber a troca de feedback
+                            initial={{ opacity: 0, y: 5, scale: 0.95 }}
+                            animate={{ opacity: 1, y: 0, scale: 1 }}
+                            exit={{ opacity: 0, y: -30, scale: 0.95 }}
+                            transition={{ duration: 0.6, ease: "easeOut" }}
+                            className="bg-white rounded-lg p-6 shadow-md flex flex-col items-center gap-4"
+                        >
+                            <h3 className="playfair-display-texto text-[#4e392c] text-2xl font-semibold">
+                                {feedback[index].cliente}
+                            </h3>
+
+                            <div className="flex justify-center mb-2 gap-1">
+                                {[...Array(5)].map((_, i) => (
+                                    <motion.span
+                                        key={i}
+                                        className={i < feedback[index].estrelas ? "text-yellow-400" : "text-gray-300"}
+                                        initial={{ scale: 0 }}
+                                        animate={{ scale: 1 }}
+                                        transition={{ delay: i * 0.1 }}
+                                    >
+                                        ★
+                                    </motion.span>
+                                ))}
+                            </div>
+
+                            <p className="italic text-gray-700">{feedback[index].texto}</p>
+                        </motion.div>
+                    </AnimatePresence>
+
+                    {/* Botões de navegação */}
+                    <div className="flex gap-3 mt-4">
+                        <motion.button
+                            onClick={prevFeedback}
+                            whileTap={{ scale: 0.9 }}
+                            whileHover={{ backgroundColor: "#a68a6d" }}
+                            className="bg-[#856a59] text-white px-3 py-1 rounded-md shadow-sm transition-colors"
+                        >
+                            &lt;
+                        </motion.button>
+
+                        <motion.button
+                            onClick={nextFeedback}
+                            whileTap={{ scale: 0.9 }}
+                            whileHover={{ backgroundColor: "#a68a6d" }}
+                            className="bg-[#856a59] text-white px-3 py-1 rounded-md shadow-sm transition-colors"
+                        >
+                            &gt;
+                        </motion.button>
                     </div>
                 </div>
-
             </section>
-
         </>
     );
 }
 
-export default About
+export default About;
