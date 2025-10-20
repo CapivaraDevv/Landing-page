@@ -16,21 +16,21 @@ function Hero() {
                         </p>
                     </div>
                     <div className='relative'>
-                        <img src={cafeImage} alt="Xicára de café brewly" className='w-52' />
+                        <img src={cafeImage} alt="Xicára de café brewly" className='w-52' id='cafeAnimation' />
 
                         {/* Fumaças de baixo */}
-                        <div className='absolute top-[1.5rem] left-1/2 transform -translate-x-1/2 w-2 h-8 bg-white/40 rounded-full animate-smoke'></div>
+                        <div className='absolute top-[1.5rem] left-1/2 transform -translate-x-1/2 w-2 h-8 bg-white/40 rounded-full animate-smoke-down'></div>
 
-                        <div className='absolute top-[1rem] left-1/3 transform -translate-x-1/2 w-1.5 h-6 bg-white/30 rounded-full animate-smoke delay-50'></div>
+                        <div className='absolute top-[1rem] left-1/3 transform -translate-x-1/2 w-1.5 h-6 bg-white/30 rounded-full animate-smoke-down delay-50'></div>
 
-                        <div className='absolute top-[1rem] right-1/3 transform -translate-x-1/3 w-1.5 h-6 bg-white/30 rounded-full animate-smoke delay-50'></div>
+                        <div className='absolute top-[1rem] right-1/3 transform -translate-x-1/3 w-1.5 h-6 bg-white/30 rounded-full animate-smoke-down delay-50'></div>
 
                         {/* Fumaças de cima */}
-                        <div className='absolute top-[-1rem] left-1/3 transform -translate-x-1/2 w-1 h-4 bg-white/10 rounded-full animate-smoke delay-100'></div>
+                        <div className='absolute top-[-1rem] left-1/3 transform -translate-x-1/2 w-1 h-4 bg-white/10 rounded-full animate-smoke-up delay-100'></div>
 
-                        <div className='absolute top-[-0.5rem] left-1/2 transform -translate-x-1/2 w-1 h-4 bg-white/20 rounded-full animate-smoke delay-75'></div>
+                        <div className='absolute top-[-0.5rem] left-1/2 transform -translate-x-1/2 w-1 h-4 bg-white/20 rounded-full animate-smoke-up delay-75'></div>
 
-                        <div className='absolute top-[-1rem] right-1/3 transform -translate-x-1/2 w-1 h-4 bg-white/10 rounded-full animate-smoke delay-100'></div>
+                        <div className='absolute top-[-1rem] right-1/3 transform -translate-x-1/2 w-1 h-4 bg-white/10 rounded-full animate-smoke-up delay-100'></div>
                 
                     </div>
                 
