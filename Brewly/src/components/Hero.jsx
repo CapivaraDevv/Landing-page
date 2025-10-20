@@ -1,5 +1,6 @@
 import cafeImage from '../assets/xicara-de-cafe-em-um-prato.png'
 import imagemFundo from '../assets/Fundo.jpg'
+import '../styles/Hero.css'
 
 function Hero() {
     return (

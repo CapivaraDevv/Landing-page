@@ -1,3 +1,5 @@
+import '../styles/Products.css'
+
 const produtos = [
     {
         id: 1,
@@ -40,8 +42,8 @@ function Products({ search }) {
                     </div>
                     <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
                         {produtosFiltrados.map(produto => (
-                            <div key={produto.id} className="relative bg-white border border-zinc-200 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow flex flex-col">
-                                <img src={produto.imagem} alt={produto.nome} className="w-full h-52 object-cover hover:scale-105 hover:brightness-90" />
+                            <div key={produto.id} className="card relative bg-white border border-zinc-200 rounded-xl flex flex-col">
+                                <img src={produto.imagem} alt={produto.nome} className="w-full h-52 object-cover hover:brightness-90" />
                                 <div className="p-4 flex flex-col flex-1">
                                     <h3 className="font-pacifico text-lg font-medium text-zinc-900">{produto.nome}</h3>
                                     <p className="playfair-display-texto mt-2 text-sm text-zinc-600 flex-1">{produto.nota}</p>
@@ -53,10 +55,11 @@ function Products({ search }) {
                                     </div>
                                 </div>
                             </div>
+            
                         ))}
-                    </div>
                 </div>
-            </section>
+            </div>
+        </section >
         </>
     )
 
