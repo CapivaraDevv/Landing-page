@@ -14,6 +14,12 @@ const feedback = [
         cliente: "Gabriel",
         texto: "Uma loja espetacular, sempre com os melhores produtos.",
         estrelas: 4
+    },
+    {
+        id: 3,
+        cliente: "Wesley",
+        texto: "Produtos excelentes, nunca provei um café tão bom quanto.",
+        estrelas: 5
     }
 ];
 
@@ -28,7 +34,7 @@ function About() {
         setIndex(prev => (prev === feedback.length - 1 ? 0 : prev + 1));
     };
 
-    // Auto-advance a cada 4s
+   
     useEffect(() => {
         const timer = setTimeout(() => {
             nextFeedback();
@@ -48,15 +54,15 @@ function About() {
                     </p>
                 </div>
 
-                <div className="max-w-4xl mx-auto px-4 py-5 text-center flex flex-col items-center justify-center">
+                <div className="max-w-4xl mx-auto px-4 text-center flex flex-col items-center justify-center">
                     <AnimatePresence mode="wait">
                         <motion.div
-                            key={index} // faz o Motion perceber a troca de feedback
+                            key={index} 
                             initial={{ opacity: 0, y: 5, scale: 0.95 }}
                             animate={{ opacity: 1, y: 0, scale: 1 }}
                             exit={{ opacity: 0, y: -30, scale: 0.95 }}
                             transition={{ duration: 0.6, ease: "easeOut" }}
-                            className="bg-white rounded-lg p-6 shadow-md flex flex-col items-center gap-4"
+                            className="bg-white rounded-lg p-4 shadow-md flex flex-col items-center gap-4"
                         >
                             <h3 className="playfair-display-texto text-[#4e392c] text-2xl font-semibold">
                                 {feedback[index].cliente}
