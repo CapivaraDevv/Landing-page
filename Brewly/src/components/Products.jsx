@@ -1,4 +1,5 @@
 import '../styles/Products.css'
+import { motion, scale } from 'motion/react'
 
 const produtos = [
     {
@@ -24,10 +25,28 @@ const produtos = [
     }
 ]
 
+
+
 function Products({ search }) {
     const produtosFiltrados = produtos.filter(produto =>
         produto.nome.toLowerCase().includes(search.toLowerCase())
     )
+
+
+    const containerVariants = {
+        hidden: {},
+        show: {
+            transition: {
+                staggerChildren: 0.2,
+            },
+        },
+    }
+
+    const cardVariants = {
+        hidden: { opacity: 0, y: 50, scale: 0.9},
+        show: { opacity: 1, y: 0, scale: 1, transition: {duration: 0.6, ease: "easeOut"} },
+    }
+
     return (
         <>
             <section className="py-16 bg-amber-50 text-[#5A3E36]">
@@ -40,9 +59,19 @@ function Products({ search }) {
                             Descubra nossa seleção de cafés especiais, cuidadosamente selecionados para você
                         </p>
                     </div>
-                    <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <motion.div 
+                        variants={containerVariants}
+                        initial="hidden"
+                        whileInView="show"
+                        viewport={{ once: true, amount: 0.3}}
+                        className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6"
+                        >
                         {produtosFiltrados.map(produto => (
-                            <div key={produto.id} className="card relative bg-white border border-zinc-200 rounded-xl flex flex-col">
+                            <motion.div
+                                key={produto.id}
+                                variants={cardVariants}
+                                className="card relative bg-white border border-zinc-200 rounded-xl flex flex-col"
+                            >
                                 <img src={produto.imagem} alt={produto.nome} className="w-full h-52 object-cover hover:brightness-90" />
                                 <div className="p-4 flex flex-col flex-1">
                                     <h3 className="font-pacifico text-lg font-medium text-zinc-900">{produto.nome}</h3>
@@ -54,12 +83,12 @@ function Products({ search }) {
                                         </button>
                                     </div>
                                 </div>
-                            </div>
-            
+                            </motion.div>
+
                         ))}
+                    </motion.div>
                 </div>
-            </div>
-        </section >
+            </section >
         </>
     )
 
