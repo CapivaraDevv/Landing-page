@@ -24,20 +24,20 @@ function Header({ search, setSearch }) {
                         <div className="
                             absolute top-full left-1/2 transform -translate-x-1/2 translate-y-2 ease-out
                             scale-95 mt-3 w-30 bg-[#856a59] rounded-b-lg shadow-xl opacity-0 delay-75        
-                            invisible group-hover:opacity-100 group-hover:scale-100 group-hover:translate-y-0 
+                            invisible group-hover:opacity-100 group-hover:translate-y-0 
                             group-hover:visible backdrop-blur-md transition-all duration-300 hover:ease-in
                             ">
                             <div className="products-backdrop playfair-display-texto text-white text-center py-2">
-                                <a href="#expresso" className="block px-4 py-2 text-sm  hover:bg-amber-50 hover:text-[#5A3E36] transition-colors duration-200">
+                                <a href="#expresso" className="block px-4 py-2 text-sm hover:bg-amber-50 hover:text-[#5A3E36] hover:text-base transition-all duration-200">
                                     Expresso
                                 </a>
-                                <a href="#capuccino" className="block px-4 py-2 text-sm  hover:bg-amber-50 hover:text-[#5A3E36] transition-colors duration-200">
+                                <a href="#capuccino" className="block px-4 py-2 text-sm hover:bg-amber-50 hover:text-[#5A3E36] hover:text-base transition-all duration-200">
                                     Capuccinos
                                 </a>
-                                <a href="#latte" className="block px-4 py-2 text-sm  hover:bg-amber-50 hover:text-[#5A3E36] transition-colors duration-200">
+                                <a href="#latte" className="block px-4 py-2 text-sm hover:bg-amber-50 hover:text-[#5A3E36] hover:text-base transition-all duration-200">
                                     Latte   
                                 </a>
-                                <a href="#americano" className="block px-4 py-2 text-sm  hover:bg-amber-50 hover:text-[#5A3E36] transition-colors duration-200">
+                                <a href="#americano" className="block px-4 py-2 text-sm hover:bg-amber-50 hover:text-[#5A3E36] hover:text-base transition-all duration-200">
                                     Americano
                                 </a>
                             </div>
