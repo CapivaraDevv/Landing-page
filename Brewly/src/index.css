@@ -33,29 +33,6 @@
   width: 100%;
 }
 
-@keyframes smoke-rise-down {
-  0% { transform: translateY(0px) scale(1); opacity: 0.8; }
-  15% { transform: translateX(5px);}
-  30% {transform: translateY(-5px) translateX(-5px);}
-  50% { transform: translateY(-10px) scale(1.1); opacity: 0.4; }
-  100% { transform: translateY(-20px) translateX(10px); opacity: 0; }
-}
-
-.animate-smoke-down {
-  animation: smoke-rise-down 3s ease-out infinite;
-}
-
-@keyframes smoke-rise-up {
-  0% { transform: translateY(0px) scale(1); opacity: 0.8; }
-  15% { transform: translateX(-5px) scale(1.1);}
-  30% {transform: translateY(-5px) translateX(5px);}
-  50% { transform: translateY(-10px) scale(1.1); opacity: 0.4; }
-  100% { transform: translateY(-20px) translateX(-10px); opacity: 0; }
-}
-
-.animate-smoke-up {
-  animation: smoke-rise-up 3s ease-out infinite;
-}
 
 @font-face {
   font-family: 'Inter';
