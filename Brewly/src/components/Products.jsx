@@ -78,7 +78,7 @@ function Products({ search }) {
                                     <p className="playfair-display-texto mt-2 text-sm text-zinc-600 flex-1">{produto.nota}</p>
                                     <div className="mt-4 flex items-center justify-between">
                                         <span className="text-[#5A3E36] font-semibold text-xl">{produto.preco}</span>
-                                        <button className="playfair-display-texto cursor-pointer bg-[#5A3E36] text-white py-2 px-4 rounded-md hover:bg-[#4b332c] transition-colors">
+                                        <button className="playfair-display-texto cursor-pointer bg-[#5A3E36] text-white py-2 px-4 rounded-md hover:bg-[#4b332c] hover:scale-105 transition-all">
                                             Adicionar
                                         </button>
                                     </div>
@@ -87,6 +87,12 @@ function Products({ search }) {
 
                         ))}
                     </motion.div>
+
+                    <div className='mt-8 text-center'>
+                        <button className='playfair-display-texto cursor-pointer bg-[#5A3E36] text-white py-2 px-4 rounded-md hover:bg-[#4b332c] hover:scale-105 transition-all'>
+                            Veja mais
+                        </button>
+                    </div>
                 </div>
             </section >
         </>
