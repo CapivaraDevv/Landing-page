@@ -16,29 +16,17 @@ function Hero() {
                             em seus produtos, tornando cada um de nossos produtos uma experiência fantástica.
                         </p>
                     </div>
-                    <div className='relative'>
-                        <img src={cafeImage} alt="Xicára de café brewly" className='w-52' id='cafeAnimation' />
+                    <div className="relative w-52 h-52 flex justify-center items-end">
+                        <img src={cafeImage} alt="Xícara de café Brewly" className="w-52" />
 
-                        {/* Fumaças */}
-                        <div className='absolute top-10 left-1/2 -translate-x-1/2'>
-                            {/* Meio */}
-                            <div>
-                                <span className='fumaça delay-0'></span>
-                                <span className='fumaça delay-300'></span>
-                                <span className='fumaça right-8 delay-600'></span>
-                            </div>
-                            {/* Esquerda */}
-                            <div className='fumaça-esquerda absolute top-8'>
-                                <span className='fumaça delay-0'></span>
-                                <span className='fumaça delay-300'></span>
-                                <span className='fumaça right-8 delay-600'></span>
-                            </div>
-                            {/* Direita */}
-                            <div className='fumaça-direita absolute top-8'>
-                                <span className='fumaça delay-0'></span>
-                                <span className='fumaça delay-300'></span>
-                                <span className='fumaça right-8 delay-600'></span>
-                            </div>
+                        {/* Container de fumaça */}
+                        <div className="absolute bottom-42 left-1/2 -translate-x-1/2 w-full h-full">
+                            <span className="fumaça offset-left delay-0"></span>
+                            <span className="fumaça offset-center delay-200"></span>
+                            <span className="fumaça offset-right delay-400"></span>
+                            <span className="fumaça offset-left delay-600"></span>
+                            <span className="fumaça offset-center delay-800"></span>
+                            <span className="fumaça offset-right delay-1000"></span>
                         </div>
                     </div>
 
