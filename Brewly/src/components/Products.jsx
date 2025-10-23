@@ -1,6 +1,7 @@
 import '../styles/Products.css'
 import { motion } from 'motion/react'
 import { useState } from 'react'
+import fundo from '../assets/Fundo.jpg'
 
 const produtos = [
     {
@@ -84,8 +85,13 @@ function Products({ search }) {
     ).length
 
     return (
-        <section className="py-16 bg-amber-50 text-[#5A3E36]">
-            <div className="mx-auto max-w-6xl px-4">
+        <section className="py-16 text-[#5A3E36]"
+            style={{
+                backgroundImage: `url(${fundo})`,
+                backgroundSize: 'cover',
+                backgroundPosition: 'center'
+            }}>
+            <div className="mx-auto bg-amber-50 p-10 max-w-7xl rounded-xl">
                 <div className="text-center mb-12">
                     <h2 className="font-pacifico text-2xl md:text-3xl font-semibold mb-4">
                         Nossos Produtos
