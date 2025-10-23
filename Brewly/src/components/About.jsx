@@ -92,7 +92,7 @@ function About() {
                             onClick={prevFeedback}
                             whileTap={{ scale: 0.9 }}
                             whileHover={{ backgroundColor: "#a68a6d" }}
-                            className="bg-[#856a59] text-white px-3 py-1 rounded-md shadow-sm transition-colors"
+                            className="bg-[#856a59] text-white px-3 py-1 cursor-pointer rounded-md shadow-sm transition-colors"
                         >
                             &lt;
                         </motion.button>
@@ -101,7 +101,7 @@ function About() {
                             onClick={nextFeedback}
                             whileTap={{ scale: 0.9 }}
                             whileHover={{ backgroundColor: "#a68a6d" }}
-                            className="bg-[#856a59] text-white px-3 py-1 rounded-md shadow-sm transition-colors"
+                            className="bg-[#856a59] text-white px-3 py-1 cursor-pointer rounded-md shadow-sm transition-colors"
                         >
                             &gt;
                         </motion.button>
