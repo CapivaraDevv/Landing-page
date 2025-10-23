@@ -91,7 +91,7 @@ function Products({ search }) {
                 backgroundSize: 'cover',
                 backgroundPosition: 'center'
             }}>
-            <div className="mx-auto bg-amber-50 p-10 max-w-7xl rounded-xl">
+            <div className="mx-auto bg-[#ffff] p-10 max-w-7xl rounded-xl">
                 <div className="text-center mb-12">
                     <h2 className="font-pacifico text-2xl md:text-3xl font-semibold mb-4">
                         Nossos Produtos
