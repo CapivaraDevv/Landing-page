@@ -14,7 +14,7 @@ function Header({ search, setSearch }) {
         <>
             <div className="fixed top-0 left-0 right-0 w-full bg-[#856a59] backdrop-blur border-b border-zinc-200 z-50">
                 <div className="max-w-6xl py-3 flex items-center gap-8">
-                    <a href="#" className="logo font-pacifico mx-7 text-3xl text-white underline-animated">Brewly</a>
+                    <a href="#" className="logo font-pacifico mx-7 text-3xl text-white">Brewly</a>
                     <a href="#sobre" className="playfair-display-texto text-lg text-white underline-animated">Sobre nós</a>
                     <div className="relative group">
                         <a href="#" className="playfair-display-texto text-lg text-white cursor-pointer">
