@@ -85,12 +85,7 @@ function Products({ search }) {
     ).length
 
     return (
-        <section className="py-16 text-[#5A3E36]"
-            style={{
-                backgroundImage: `url(${fundo})`,
-                backgroundSize: 'cover',
-                backgroundPosition: 'center'
-            }}>
+        <section className="products py-16 text-[#5A3E36]">
             <div className="mx-auto bg-[#ffff] p-10 max-w-7xl rounded-xl">
                 <div className="text-center mb-12">
                     <h2 className="font-pacifico text-2xl md:text-3xl font-semibold mb-4">
