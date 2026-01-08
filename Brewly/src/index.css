@@ -1,9 +1,13 @@
 @import "tailwindcss";
 
+
+
+
 .font-pacifico {
   font-family: "Pacifico", cursive;
   font-weight: 400;
   font-style: normal;
+  color: var(--coffee-brown);
 }
 
 .playfair-display-texto{
@@ -55,8 +59,31 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  /* Cores principais */
+  --coffee-brown: #4B2E2B;   /* Marrom café */
+  --coffee-caramel: #C19A6B; /* Caramelo / Cappuccino */
+  --coffee-cream: #F5EFE6;   /* Creme / Leite */
+
+  /* Cores de apoio */
+  --coffee-green: #6B705C;   /* Verde musgo */
+  --coffee-black: #2B2B2B;   /* Preto suave */
+
+  /* Uso semântico (boa prática) */
+  --bg-primary: var(--coffee-cream);
+  --bg-secondary: #FFFFFF;
+
+  --text-primary: var(--coffee-black);
+  --text-inverse: #FFFFFF;
+
+  --accent-primary: var(--coffee-brown);
+  --accent-secondary: var(--coffee-caramel);
+  --accent-muted: var(--coffee-green);
 }
 
+.products{
+  background: var(--bg-secondary);
+}
 
 
 
