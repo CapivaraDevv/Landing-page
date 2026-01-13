@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from "motion/react";
 import '../styles/About.css'
 
@@ -34,19 +34,42 @@ function About() {
         setIndex(prev => (prev === feedback.length - 1 ? 0 : prev + 1));
     };
 
-   
+    const underlineVariants = {
+        offScreen: { scaleX: 0 },
+        onScreen: {
+            scaleX: 1,
+            transition: { duration: 1.5, ease: "easeOut" }
+        },
+    }
+
+
     useEffect(() => {
-        const timer = setTimeout(() => {
-            nextFeedback();
+        const timer = setInterval(() => {
+            setIndex(prev => (prev === feedback.length - 1 ? 0 : prev + 1));
         }, 4000);
-        return () => clearTimeout(timer);
-    }, [index]);
+        return () => clearInterval(timer);
+    }, []);
+
+
 
     return (
         <>
-            <section id="sobre" className="bg-[#5e4b3e] text-[#f6eee3] py-20 grid sm:grid-cols-2 lg:grid-cols-2 gap-3">
-                <div className="max-w-4xl mx-auto px-4 text-center ">
-                    <h2 className="playfair-display-texto text-3xl mb-5">Um pouco sobre nossa história</h2>
+            <motion.section
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8 }}
+                id="sobre" className="bg-linear-to-b from-[#F5EFE6] to-[#EFE6DA]
+                text-[#2B2B2B] py-20 grid md:grid-cols-2 gap-3"
+            >
+                <div className="max-w-4xl mx-auto px-4  text-center ">
+                    <h2 className="playfair-display-texto text-4xl md:text-5xl tracking-wider mb-5">Um pouco sobre nossa história</h2>
+                    <motion.div
+                        variants={underlineVariants}
+                        initial="offScreen"
+                        whileInView="onScreen"
+                        className="w-32 h-0.5 origin-left bg-[#C19A6B] mx-auto mb-4"
+                    />
                     <p className="playfair-display-texto text-lg">
                         A <span className="font-pacifico">Brewly</span> nasceu da paixão pelo café e pelo desejo de proporcionar experiências únicas.
                         Selecionamos os melhores grãos e criamos receitas especiais para encantar nossos clientes.
@@ -57,12 +80,12 @@ function About() {
                 <div className="max-w-4xl mx-auto px-4 text-center flex flex-col items-center justify-center">
                     <AnimatePresence mode="wait">
                         <motion.div
-                            key={index} 
+                            key={index}
                             initial={{ opacity: 0, y: 5, scale: 0.95 }}
                             animate={{ opacity: 1, y: 0, scale: 1 }}
                             exit={{ opacity: 0, y: -30, scale: 0.95 }}
                             transition={{ duration: 0.6, ease: "easeOut" }}
-                            className="bg-white rounded-lg p-4 shadow-md flex flex-col items-center gap-4"
+                            className="bg-white rounded-xl p-6 shadow-lg shadow-black/5 max-w-md flex flex-col items-center gap-4"
                         >
                             <h3 className="playfair-display-texto text-[#4e392c] text-2xl font-semibold">
                                 {feedback[index].cliente}
@@ -72,9 +95,10 @@ function About() {
                                 {[...Array(5)].map((_, i) => (
                                     <motion.span
                                         key={i}
-                                        className={i < feedback[index].estrelas ? "text-yellow-400" : "text-gray-300"}
+                                        className={i < feedback[index].estrelas ? "text-yellow-400 drop-shadow-sm" : "text-gray-300"}
                                         initial={{ scale: 0 }}
                                         animate={{ scale: 1 }}
+                                        viewport={{ once: true }}
                                         transition={{ delay: i * 0.1 }}
                                     >
                                         ★
@@ -82,7 +106,7 @@ function About() {
                                 ))}
                             </div>
 
-                            <p className="italic text-gray-700">{feedback[index].texto}</p>
+                            <p className="italic text-gray-600 leading-relaxed max-w-sm">{feedback[index].texto}</p>
                         </motion.div>
                     </AnimatePresence>
 
@@ -91,8 +115,10 @@ function About() {
                         <motion.button
                             onClick={prevFeedback}
                             whileTap={{ scale: 0.9 }}
-                            whileHover={{ backgroundColor: "#a68a6d" }}
-                            className="bg-[#856a59] text-white px-3 py-1 cursor-pointer rounded-md shadow-sm transition-colors"
+                            whileHover={{ backgroundColor: "#C19A6B" }}
+                            className="bg-[#856a59] text-white flex items-center justify-center
+                                        w-9 h-9 rounded-full cursor-pointer shadow-sm transition-all
+                            "
                         >
                             &lt;
                         </motion.button>
@@ -100,14 +126,16 @@ function About() {
                         <motion.button
                             onClick={nextFeedback}
                             whileTap={{ scale: 0.9 }}
-                            whileHover={{ backgroundColor: "#a68a6d" }}
-                            className="bg-[#856a59] text-white px-3 py-1 cursor-pointer rounded-md shadow-sm transition-colors"
+                            whileHover={{ backgroundColor: "#C19A6B" }}
+                            className="bg-[#856a59] text-white flex items-center justify-center
+                                         w-9 h-9 rounded-full cursor-pointer shadow-sm transition-all
+                            "
                         >
                             &gt;
                         </motion.button>
                     </div>
                 </div>
-            </section>
+            </motion.section>
         </>
     );
 }
