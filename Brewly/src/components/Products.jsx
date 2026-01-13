@@ -1,28 +1,27 @@
 import '../styles/Products.css'
 import { motion } from 'motion/react'
 import { useState } from 'react'
-import fundo from '../assets/Fundo.jpg'
 
 const produtos = [
     {
         id: 1,
         nome: "Café Expresso",
         preco: "R$22,90",
-        imagem: "/src/assets/xicara-de-cafe-em-um-prato.png",
+        imagem: "/src/assets/Cafe-hero.jpg",
         nota: "Clássico Italiano, intenso e cremoso."
     },
     {
         id: 2,
         nome: "Cappucino",
         preco: "R$36,40",
-        imagem: "/src/assets/xicara-de-cafe-em-um-prato.png",
+        imagem: "/src/assets/Cappucino.jpg",
         nota: "Café, leite vaporizado e espuma cremosa."
     },
     {
         id: 3,
         nome: "Latte",
         preco: "R$32,56",
-        imagem: "/src/assets/xicara-de-cafe-em-um-prato.png",
+        imagem: "/src/assets/Cafe.jpg",
         nota: "Mais leite, textura suave"
     },
     {
@@ -108,9 +107,9 @@ function Products({ search }) {
                             variants={cardVariants}
                             initial="hidden"
                             animate="show"
-                            className="relative bg-white border border-zinc-200 rounded-xl flex flex-col"
+                            className="relative bg-white border border-zinc-200 rounded-xl flex flex-col hover:scale-102 transition-all duration-400 ease-in-out"
                         >
-                            <img src={produto.imagem} alt={produto.nome} className="w-full h-52 object-cover hover:brightness-90" />
+                            <img src={produto.imagem} alt={produto.nome} className="w-full h-52 object-cover rounded-t-xl hover:brightness-90" />
                             <div className="p-4 flex flex-col flex-1">
                                 <h3 className="font-pacifico text-lg font-medium text-zinc-900">{produto.nome}</h3>
                                 <p className="playfair-display-texto mt-2 text-sm text-zinc-600 flex-1">{produto.nota}</p>
