@@ -17,7 +17,7 @@ function Hero() {
     return (
         <>
             <section className="w-full h-auto bg-[#F5EFE6] content-center ">
-                <div className="mx-auto max-w-6xl px-4 flex items-center mb-15 mt-52">
+                <div className="mx-auto max-w-6xl px-4 flex flex-col lg:flex-row items-center mb-8 sm:mb-15 mt-8 sm:mt-32 lg:mt-52">
                     <motion.div
                         variants={cardVariants}
                         initial="offScreen"

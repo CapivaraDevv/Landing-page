@@ -25,8 +25,8 @@ function ProductsCard() {
                 variants={variants}
                 initial="offScreen"
                 whileInView="onScreen"
-                className="grid grid-cols-3 gap-4 items-center 
-                max-w-8xl mx-auto px-7 p-8 mt-22 mb-26"
+                className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 items-center 
+                max-w-8xl mx-auto px-4 sm:px-7 p-4 sm:p-8 mt-8 sm:mt-16 lg:mt-22 mb-10 sm:mb-16 lg:mb-26"
             >
                 {/* Coluna 1: Imagem com Texto sobreposto */}
                 <div className="relative w-full h-[300px] hover:scale-102 transition-all duration-400 ease-in-out">
@@ -41,7 +41,7 @@ function ProductsCard() {
                         {/* Texto sobreposto à imagem */}
                         <h1 className='
                                 absolute inset-0 z-20 flex items-center justify-center
-                                text-[80px] font-black uppercase bg-clip-text 
+                                text-2xl sm:text-4xl lg:text-[80px] font-black uppercase bg-clip-text 
                                 text-transparent text-image hover:text-white 
                                 transition-all duration-400 ease-in-out
                                 cursor-pointer
@@ -64,7 +64,7 @@ function ProductsCard() {
 
                         <h1 className='
                                 absolute inset-0 z-20 flex items-center justify-center
-                                text-[80px] font-black uppercase bg-clip-text 
+                                text-2xl sm:text-4xl lg:text-[80px] font-black uppercase bg-clip-text 
                                 text-transparent text-image hover:text-white 
                                 transition-all duration-400 ease-in-out
                                 cursor-pointer
@@ -87,7 +87,7 @@ function ProductsCard() {
 
                         <h1 className='
                                 absolute inset-0 z-20 flex items-center justify-center
-                                text-[80px] font-black uppercase bg-clip-text 
+                                text-2xl sm:text-4xl lg:text-[80px] font-black uppercase bg-clip-text 
                                 text-transparent text-image hover:text-white 
                                 transition-all duration-400 ease-in-out
                                 cursor-pointer

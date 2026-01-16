@@ -60,7 +60,7 @@ function About() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.8 }}
                 id="sobre" className="bg-linear-to-b from-[#F5EFE6] to-[#EFE6DA]
-                text-[#2B2B2B] py-20 grid md:grid-cols-2 gap-3"
+                text-[#2B2B2B] py-8 sm:py-16 lg:py-20 grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 lg:gap-8 px-4 sm:px-6"
             >
                 <div className="max-w-4xl mx-auto px-4  text-center ">
                     <h2 className="playfair-display-texto text-4xl md:text-5xl tracking-wider mb-5">Um pouco sobre nossa história</h2>
