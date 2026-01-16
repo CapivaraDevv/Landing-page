@@ -1,48 +1,52 @@
 import '../styles/Products.css'
 import { motion } from 'motion/react'
 import { useState } from 'react'
+import cafeHero from '../assets/Cafe-hero.jpg'
+import cappucino from '../assets/Cappucino.jpg'
+import cafe from '../assets/Cafe.jpg'
+import xicaraCafe from '../assets/xicara-de-cafe-em-um-prato.png'
 
 const produtos = [
     {
         id: 1,
         nome: "Café Expresso",
         preco: "R$22,90",
-        imagem: "/src/assets/Cafe-hero.jpg",
+        imagem: cafeHero,
         nota: "Clássico Italiano, intenso e cremoso."
     },
     {
         id: 2,
         nome: "Cappucino",
         preco: "R$36,40",
-        imagem: "/src/assets/Cappucino.jpg",
+        imagem: cappucino,
         nota: "Café, leite vaporizado e espuma cremosa."
     },
     {
         id: 3,
         nome: "Latte",
         preco: "R$32,56",
-        imagem: "/src/assets/Cafe.jpg",
+        imagem: cafe,
         nota: "Mais leite, textura suave"
     },
     {
         id: 4,
         nome: "Mocha",
         preco: "R$38,90",
-        imagem: "/src/assets/xicara-de-cafe-em-um-prato.png",
+        imagem: xicaraCafe,
         nota: "Chocolate e café numa combinação perfeita"
     },
     {
         id: 5,
         nome: "Americano",
         preco: "R$24,00",
-        imagem: "/src/assets/xicara-de-cafe-em-um-prato.png",
+        imagem: xicaraCafe,
         nota: "Café mais leve, água quente e intenso"
     },
     {
         id: 6,
         nome: "Macchiato",
         preco: "R$28,50",
-        imagem: "/src/assets/xicara-de-cafe-em-um-prato.png",
+        imagem: xicaraCafe,
         nota: "Espresso com um toque de espuma"
     },
 ]
