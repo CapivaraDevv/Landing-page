@@ -70,7 +70,7 @@ function About() {
                         whileInView="onScreen"
                         className="w-32 h-0.5 origin-left bg-[#C19A6B] mx-auto mb-4"
                     />
-                    <p className="playfair-display-texto text-lg text-left px-16">
+                    <p className="playfair-display-texto text-lg text-left px-18">
                         A <span className="font-pacifico">Brewly</span> nasceu da paixão pelo café e pelo desejo de proporcionar experiências únicas.
                         Selecionamos os melhores grãos e criamos receitas especiais para encantar nossos clientes.
                         Nosso compromisso é com a qualidade, o sabor e o conforto em cada xícara.
