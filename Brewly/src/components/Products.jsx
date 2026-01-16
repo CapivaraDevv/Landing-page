@@ -4,6 +4,9 @@ import { useState } from 'react'
 import cafeHero from '../assets/Cafe-hero.jpg'
 import cappucino from '../assets/Cappucino.jpg'
 import cafe from '../assets/Cafe.jpg'
+import mocha from '../assets/Mocha.jpg'
+import americano from '../assets/Americano.jpg'
+import macchiato from '../assets/Macchiato.jpg'
 import xicaraCafe from '../assets/xicara-de-cafe-em-um-prato.png'
 
 const produtos = [
@@ -32,21 +35,21 @@ const produtos = [
         id: 4,
         nome: "Mocha",
         preco: "R$38,90",
-        imagem: xicaraCafe,
+        imagem: mocha,
         nota: "Chocolate e café numa combinação perfeita"
     },
     {
         id: 5,
         nome: "Americano",
         preco: "R$24,00",
-        imagem: xicaraCafe,
+        imagem: americano,
         nota: "Café mais leve, água quente e intenso"
     },
     {
         id: 6,
         nome: "Macchiato",
         preco: "R$28,50",
-        imagem: xicaraCafe,
+        imagem: macchiato,
         nota: "Espresso com um toque de espuma"
     },
 ]
