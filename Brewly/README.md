@@ -184,5 +184,3 @@ Desenvolvido com ❤️ para **Brewly** | 2026
 - [ ] PWA para mobile app
 
 ---
-
-**Pronto para postar! 🚀**
