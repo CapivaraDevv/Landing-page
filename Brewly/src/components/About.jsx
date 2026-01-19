@@ -62,7 +62,7 @@ function About() {
                 id="sobre" className="bg-linear-to-b from-[#F5EFE6] to-[#EFE6DA]
                 text-[#2B2B2B] py-8 sm:py-16 lg:py-20 grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 lg:gap-8 px-4 sm:px-6"
             >
-                <div className="max-w-4xl mx-auto px-4  text-center ">
+                <div className="max-w-4xl mx-auto px-4 text-center ">
                     <h2 className="playfair-display-texto text-4xl md:text-5xl tracking-wider mb-5">Um pouco sobre nossa história</h2>
                     <motion.div
                         variants={underlineVariants}
@@ -70,7 +70,7 @@ function About() {
                         whileInView="onScreen"
                         className="w-32 h-0.5 origin-left bg-[#C19A6B] mx-auto mb-4"
                     />
-                    <p className="playfair-display-texto text-lg text-left px-18">
+                    <p className="playfair-display-texto text-lg text-left px-4 sm:px-8 md:px-10 lg:px-18 pb-4 sm:pb-4 lg:pb-6">
                         A <span className="font-pacifico">Brewly</span> nasceu da paixão pelo café e pelo desejo de proporcionar experiências únicas.
                         Selecionamos os melhores grãos e criamos receitas especiais para encantar nossos clientes.
                         Nosso compromisso é com a qualidade, o sabor e o conforto em cada xícara.
